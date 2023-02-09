@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class TrimToSizeExample {
 
 	public static void main(String args[]) {
-		ArrayList<Integer> arrlist = new ArrayList<Integer>(5);
+		ArrayList<Integer> arrlist = new ArrayList<Integer>(3);
 		arrlist.add(35);
 		arrlist.add(20);
 		arrlist.add(25);
@@ -14,7 +14,7 @@ public class TrimToSizeExample {
 		arrlist.add(25);
 
 		// elementData Object[5] (id=29)
-		arrlist.trimToSize();
+		// arrlist.trimToSize();
 		// elementData Object[3] (id=37)
 
 		for (Integer number : arrlist) {
