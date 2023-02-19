@@ -82,15 +82,17 @@ Output: true
     // Sol2:
     // Bucket Sort
 
+    // https://leetcode.com/problems/car-pooling/solutions/1669644/well-explained-2-ways-java-c-python-javascript-easy-for-mind-to-accept-it/?orderBy=most_votes&languageTags=java
 
     // Note that in the problem there is a interesting constraint:
     // 0 <= trips[i][1] < trips[i][2] <= 1000
     // What pops into the mind is Bucket Sort, which is a sorting algorithm in O(N) time
     // but requires some prior knowledge for the range of the data.
 
-    // What we do is initial 1001 buckets,
-    // and put the number of passengers changed in corresponding buckets,
-    // and collect the buckets one by one.
+    // What we do is initial 1001 buckets which will indicate the stops.
+    // agar onboard then +trip[0] as 0th index have the number of passenger
+    // deboard ke case me -trip[0]
+    // at the end ek loop chala do and usedCapacity jaise hi allowedCapacity se jyada ho false;
 
 
     // TC: O(max(N, 1001))
@@ -100,8 +102,8 @@ Output: true
         public boolean carPooling(int[][] trips, int capacity) {
             int[] timestamp = new int[1001];
             for (int[] trip : trips) {
-                timestamp[trip[1]] += trip[0];
-                timestamp[trip[2]] -= trip[0];
+                timestamp[trip[1]] += trip[0]; // onboard ho rha so add kar rhe timestamp wale me
+                timestamp[trip[2]] -= trip[0];  // depart ke case me
             }
             int usedCapacity = 0;
             for (int number : timestamp) {

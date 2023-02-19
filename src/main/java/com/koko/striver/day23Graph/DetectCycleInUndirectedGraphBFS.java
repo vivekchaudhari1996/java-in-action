@@ -1,4 +1,4 @@
-package com.koko.dataStructures.graphs;
+package com.koko.striver.day23Graph;
 
 import java.io.IOException;
 import java.util.ArrayList;
